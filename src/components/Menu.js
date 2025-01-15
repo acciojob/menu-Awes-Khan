@@ -35,6 +35,21 @@ const Menu = () => {
       </h1>
 
       <div className="btn-container tabs" style={{ display: "flex", justifyContent: "center", gap: "10px", marginBottom: "20px" }}>
+        <button
+          id="main"
+          data-test-id="menu-item-all"
+          onClick={() => filterByCategory("all")}
+          style={{
+            padding: "10px 20px",
+            border: "1px solid #ddd",
+            borderRadius: "5px",
+            backgroundColor: "#f9f9f9",
+            cursor: "pointer",
+            textDecoration: "underline",
+          }}
+        >
+          All
+        </button>
         {activeCategory !== 'breakfast' && (
           <button
             id="filter-btn-1"
@@ -84,22 +99,6 @@ const Menu = () => {
             }}
           >
             Shakes
-          </button>
-        )}
-        {activeCategory !== 'all' && (
-          <button
-            id="filter-btn-0"
-            onClick={() => filterByCategory("all")}
-            style={{
-              padding: "10px 20px",
-              border: "1px solid #ddd",
-              borderRadius: "5px",
-              backgroundColor: "#f9f9f9",
-              cursor: "pointer",
-              textDecoration: "underline",
-            }}
-          >
-            All
           </button>
         )}
       </div>
