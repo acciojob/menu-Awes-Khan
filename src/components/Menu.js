@@ -113,7 +113,7 @@ const Menu = () =>{
       >
         <button 
           id="main"
-          className="filter-btn" 
+          className="" 
           onClick={() => filterByCategoy("all")}
           style={{
             padding: "10px 20px",
@@ -129,7 +129,7 @@ const Menu = () =>{
         <button 
           id="filter-btn-1"
           data-test-id="menu-item-breakfast"
-          className="filter-btn" 
+          className="" 
           onClick={() => filterByCategoy("breakfast")}
           style={{
             padding: "10px 20px",
@@ -145,7 +145,7 @@ const Menu = () =>{
         <button 
           id="filter-btn-2"
           data-test-id="menu-item-lunch"
-          className="filter-btn" 
+          className="" 
           onClick={() => filterByCategoy("lunch")}
           style={{
             padding: "10px 20px",
