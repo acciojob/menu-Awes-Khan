@@ -112,6 +112,7 @@ const Menu = () =>{
         }}
       >
         <button 
+          id="main"
           className="filter-btn" 
           onClick={() => filterByCategoy("all")}
           style={{
@@ -126,6 +127,7 @@ const Menu = () =>{
           All
         </button>
         <button 
+          id="filter-btn-1"
           className="filter-btn" 
           onClick={() => filterByCategoy("breakfast")}
           style={{
@@ -140,6 +142,7 @@ const Menu = () =>{
           Breakfast
         </button>
         <button 
+          id="filter-btn-2"
           className="filter-btn" 
           onClick={() => filterByCategoy("lunch")}
           style={{
@@ -154,6 +157,7 @@ const Menu = () =>{
           Lunch
         </button>
         <button 
+          id="filter-btn-3"
           className="filter-btn" 
           onClick={() => filterByCategoy("shakes")}
           style={{
