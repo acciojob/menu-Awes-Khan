@@ -15,8 +15,10 @@ const Menu = () => {
   ]);
 
   const [menuList, setMenuList] = React.useState(menus);
+  const [activeCategory, setActiveCategory] = React.useState('all');
 
   const filterByCategory = (category) => {
+    setActiveCategory(category);
     if (category === "all") {
       setMenuList(menus);
     } else {
@@ -47,51 +49,57 @@ const Menu = () => {
         >
           All
         </button>
-        <button
-          id="filter-btn-1"
-          data-test-id="menu-item-breakfast"
-          onClick={() => filterByCategory("breakfast")}
-          style={{
-            padding: "10px 20px",
-            border: "1px solid #ddd",
-            borderRadius: "5px",
-            backgroundColor: "#f9f9f9",
-            cursor: "pointer",
-            textDecoration: "underline",
-          }}
-        >
-          Breakfast
-        </button>
-        <button
-          id="filter-btn-2"
-          data-test-id="menu-item-lunch"
-          onClick={() => filterByCategory("lunch")}
-          style={{
-            padding: "10px 20px",
-            border: "1px solid #ddd",
-            borderRadius: "5px",
-            backgroundColor: "#f9f9f9",
-            cursor: "pointer",
-            textDecoration: "underline",
-          }}
-        >
-          Lunch
-        </button>
-        <button
-          id="filter-btn-3"
-          data-test-id="menu-item-shakes"
-          onClick={() => filterByCategory("shakes")}
-          style={{
-            padding: "10px 20px",
-            border: "1px solid #ddd",
-            borderRadius: "5px",
-            backgroundColor: "#f9f9f9",
-            cursor: "pointer",
-            textDecoration: "underline",
-          }}
-        >
-          Shakes
-        </button>
+        {activeCategory !== "breakfast" && (
+          <button
+            id="filter-btn-1"
+            data-test-id="menu-item-breakfast"
+            onClick={() => filterByCategory("breakfast")}
+            style={{
+              padding: "10px 20px",
+              border: "1px solid #ddd",
+              borderRadius: "5px",
+              backgroundColor: "#f9f9f9",
+              cursor: "pointer",
+              textDecoration: "underline",
+            }}
+          >
+            Breakfast
+          </button>
+        )}
+        {activeCategory !== "lunch" && (
+          <button
+            id="filter-btn-2"
+            data-test-id="menu-item-lunch"
+            onClick={() => filterByCategory("lunch")}
+            style={{
+              padding: "10px 20px",
+              border: "1px solid #ddd",
+              borderRadius: "5px",
+              backgroundColor: "#f9f9f9",
+              cursor: "pointer",
+              textDecoration: "underline",
+            }}
+          >
+            Lunch
+          </button>
+        )}
+        {activeCategory !== "shakes" && (
+          <button
+            id="filter-btn-3"
+            data-test-id="menu-item-shakes"
+            onClick={() => filterByCategory("shakes")}
+            style={{
+              padding: "10px 20px",
+              border: "1px solid #ddd",
+              borderRadius: "5px",
+              backgroundColor: "#f9f9f9",
+              cursor: "pointer",
+              textDecoration: "underline",
+            }}
+          >
+            Shakes
+          </button>
+        )}
       </div>
 
       <div>
