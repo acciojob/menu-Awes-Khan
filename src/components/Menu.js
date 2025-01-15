@@ -128,6 +128,7 @@ const Menu = () =>{
         </button>
         <button 
           id="filter-btn-1"
+          data-test-id="menu-item-breakfast"
           className="filter-btn" 
           onClick={() => filterByCategoy("breakfast")}
           style={{
@@ -143,6 +144,7 @@ const Menu = () =>{
         </button>
         <button 
           id="filter-btn-2"
+          data-test-id="menu-item-lunch"
           className="filter-btn" 
           onClick={() => filterByCategoy("lunch")}
           style={{
@@ -158,6 +160,7 @@ const Menu = () =>{
         </button>
         <button 
           id="filter-btn-3"
+          data-test-id="menu-item-shakes"
           className="filter-btn" 
           onClick={() => filterByCategoy("shakes")}
           style={{
