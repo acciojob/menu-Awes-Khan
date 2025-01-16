@@ -26,80 +26,64 @@ const Menu = () => {
   };
 
   return (
-    <div id="main">
-      <h1 style={{ textAlign: "center", textDecoration: "underline", color: "#333", marginBottom: "20px" }}>
-        Our Menu
-      </h1>
+    <div id='main'>
+        
+        <h1>Our Menu</h1>
 
-      <div className="btn-container tabs" style={{ display: "flex", justifyContent: "center", gap: "10px", marginBottom: "20px" }}>
-        <button
-          data-test-id="menu-item-all"
-          onClick={() => filterByCategory("all")}
-          style={{
-            padding: "10px 20px",
-            border: "1px solid #ddd",
-            borderRadius: "5px",
-            backgroundColor: "#f9f9f9",
-            cursor: "pointer",
-            textDecoration: "underline",
-          }}
-        >
-          All
-        </button>
-        <button
-          id="filter-btn-1"
-          data-test-id="menu-item-breakfast"
-          onClick={() => filterByCategory("breakfast")}
-          style={{
-            padding: "10px 20px",
-            border: "1px solid #ddd",
-            borderRadius: "5px",
-            backgroundColor: "#f9f9f9",
-            cursor: "pointer",
-            textDecoration: "underline",
-          }}
-        >
-          Breakfast
-        </button>
-        <button
-          id="filter-btn-2"
-          data-test-id="menu-item-lunch"
-          onClick={() => filterByCategory("lunch")}
-          style={{
-            padding: "10px 20px",
-            border: "1px solid #ddd",
-            borderRadius: "5px",
-            backgroundColor: "#f9f9f9",
-            cursor: "pointer",
-            textDecoration: "underline",
-          }}
-        >
-          Lunch
-        </button>
-        <button
-          id="filter-btn-3"
-          data-test-id="menu-item-shakes"
-          onClick={() => filterByCategory("shakes")}
-          style={{
-            padding: "10px 20px",
-            border: "1px solid #ddd",
-            borderRadius: "5px",
-            backgroundColor: "#f9f9f9",
-            cursor: "pointer",
-            textDecoration: "underline",
-          }}
-        >
-          Shakes
-        </button>
-      </div>
+        <div>
+            <button onClick={() => {
+                const cat = "all"
+                setFilteredItems(data)
+                // console.log(nArr)
 
-      <div>
-        {menuList.map((menu) => (
-          <Card key={menu.id} menu={menu} />
-        ))}
-      </div>
+
+            }}>All</button>
+            <button id='filter-btn-1' onClick={() => {
+                const cat = "breakfast"
+
+                const nArr = items.filter((item) => {
+                    return item.category == cat
+                })
+
+                setFilteredItems(nArr)
+                // console.log(nArr)
+
+
+            }}>Breakfast</button>
+            <button id='filter-btn-2' onClick={() => {
+                const cat = "lunch"
+
+                const nArr = items.filter((item) => {
+                    return item.category == cat
+                })
+
+                setFilteredItems(nArr)
+                // console.log(nArr)
+
+
+            }}>Lunch</button>
+            <button id='filter-btn-3' onClick={() => {
+                const cat = "shakes"
+
+                const nArr = items.filter((item) => {
+                    return item.category == cat
+                })
+
+                setFilteredItems(nArr)
+                // console.log(nArr)
+
+
+            }}>Shakes</button>
+        </div>
+
+        <div style={{display:'flex', flexWrap : "wrap"}}>
+            {filteredItems.map((item) => {
+                return <CompA item={item} />
+            })}
+        </div>
+
     </div>
-  );
+  )
 };
 
 export default Menu;
