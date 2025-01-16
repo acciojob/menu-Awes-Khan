@@ -26,14 +26,13 @@ const Menu = () => {
   };
 
   return (
-    <div>
+    <div id="main">
       <h1 style={{ textAlign: "center", textDecoration: "underline", color: "#333", marginBottom: "20px" }}>
         Our Menu
       </h1>
 
       <div className="btn-container tabs" style={{ display: "flex", justifyContent: "center", gap: "10px", marginBottom: "20px" }}>
         <button
-          id="main"
           data-test-id="menu-item-all"
           onClick={() => filterByCategory("all")}
           style={{
